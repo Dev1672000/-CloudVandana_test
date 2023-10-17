@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #0dbfdf;
+  border: 2px solid #ede209;
+  border-radius: 10px;
+  box-shadow: 2 5px 5px rgba(46, 45, 45, 0.2);
+  width: 100vw;
+  height: 100vh;
+  margin: 3px;
+  padding: 0%;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  background-color: #ede209;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d7ff0c;
+  color: #242222;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+#summary {
+  padding: 10px;
+}
