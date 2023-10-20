@@ -1,4 +1,5 @@
-function submitForm() {
+function submitForm(event) {
+  event.preventDefault();
   const firstName = document.getElementById("firstName").value;
   const lastName = document.getElementById("lastName").value;
   const dob = document.getElementById("dob").value;
@@ -38,22 +39,28 @@ function submitForm() {
 
   if (errors.length > 0) {
     alert(errors.join("\n"));
+    return false;
   } else {
     const formData = `
-            First Name: ${firstName}
-            Last Name: ${lastName}
-            Date of Birth: ${dob}
-            Country: ${country}
-            Gender: ${genderMale ? "Male" : "Female"}
-             Mobile Number: ${mobile}
-            Profession: ${profession}
-            Email: ${email}
-           
-        `;
-    alert("Form Data:\n\n" + formData);
+      First Name: ${firstName}
+      Last Name: ${lastName}
+      Date of Birth: ${dob}
+      Country: ${country}
+      Gender: ${genderMale ? "Male" : "Female"}
+      Mobile Number: ${mobile}
+      Profession: ${profession}
+      Email: ${email}
+    `;
+
+    if (confirm("Form Data:\n\n" + formData + "\n\nDo you want to submit the form?")) {
+      const form = document.getElementById("surveyForm");
+      form.reset();
+      return true; 
+    } else {
+      return false;
+    }
   }
 }
-
 function resetForm() {
   const form = document.getElementById("surveyForm");
   form.reset();
