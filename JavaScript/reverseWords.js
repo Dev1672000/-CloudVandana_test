@@ -2,22 +2,31 @@
 // Example - This is a sunny day > shiT si a ynnus yad.
 
 function reverseWords(sentence) {
-    const words = sentence.split(' ');
+  let start = 0;
+  let end = 0;
+  const reversedWords = [];
 
-    const reversedWords = words.map(word => reverseWord(word));
-    const reversed = reversedWords.join(' ');
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] === ' ') {
+      reversedWords.push(reverseWord(sentence, start, end));
+      start = i + 1;
+    }
+    end = i;
+  }
 
-    return reversed;
+  reversedWords.push(reverseWord(sentence, start, end));
+
+  return reversedWords.join(' ');
 }
 
-function reverseWord(word) {
-    return word.split('').reverse().join('');
+function reverseWord(sentence, start, end) {
+  let reversedWord = '';
+  for (let i = end; i >= start; i--) {
+    reversedWord += sentence[i];
+  }
+  return reversedWord;
 }
 
 const inputSentence = "This is a sunny day";
 const reversedSentence = reverseWords(inputSentence);
-
-console.log(reversedSentence); // Output: "sihT si a ynnus yad"
-
-
-
+console.log(reversedSentence); 

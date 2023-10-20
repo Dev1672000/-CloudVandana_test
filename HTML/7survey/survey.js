@@ -45,9 +45,10 @@ function submitForm() {
             Date of Birth: ${dob}
             Country: ${country}
             Gender: ${genderMale ? "Male" : "Female"}
+             Mobile Number: ${mobile}
             Profession: ${profession}
             Email: ${email}
-            Mobile Number: ${mobile}
+           
         `;
     alert("Form Data:\n\n" + formData);
   }
